@@ -10,8 +10,8 @@ function App() {
     }
     return { good: 0, neutral: 0, bad: 0 };
   });
-  const { good, neutral, bad } = countFeedback;
 
+  const { good, neutral, bad } = countFeedback;
   const totalFeedback = good + neutral + bad;
 
   const updateFeedback = (type, value = null) => {

@@ -3,8 +3,6 @@ import css from "./Feedback.module.css";
 export function Feedback({ countFeedback, totalFeedback }) {
   const { good, neutral, bad } = countFeedback;
 
-  //   const totalFeedback = good + neutral + bad;
-
   const positiveFeedback = Math.round((good / totalFeedback) * 100);
   if (totalFeedback === 0) {
     return (
