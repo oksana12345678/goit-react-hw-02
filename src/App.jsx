@@ -13,6 +13,7 @@ function App() {
 
   const { good, neutral, bad } = countFeedback;
   const totalFeedback = good + neutral + bad;
+  const positiveFeedback = Math.round((good / totalFeedback) * 100);
 
   const updateFeedback = (type, value = null) => {
     setCountFeedback((prevCountFeedback) => {
@@ -37,7 +38,11 @@ function App() {
     <>
       <Description />
       <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} />
-      <Feedback countFeedback={countFeedback} totalFeedback={totalFeedback} />
+      <Feedback
+        countFeedback={countFeedback}
+        totalFeedback={totalFeedback}
+        positiveFeedback={positiveFeedback}
+      />
     </>
   );
 }

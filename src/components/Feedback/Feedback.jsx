@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
 import css from "./Feedback.module.css";
-export function Feedback({ countFeedback, totalFeedback }) {
+export function Feedback({ countFeedback, totalFeedback, positiveFeedback }) {
   const { good, neutral, bad } = countFeedback;
 
-  const positiveFeedback = Math.round((good / totalFeedback) * 100);
   if (totalFeedback === 0) {
     return (
       <div>
@@ -27,6 +26,8 @@ export function Feedback({ countFeedback, totalFeedback }) {
 
 Feedback.propTypes = {
   totalFeedback: PropTypes.number.isRequired,
+  positiveFeedback: PropTypes.number.isRequired,
+
   countFeedback: PropTypes.shape({
     good: PropTypes.number.isRequired,
     neutral: PropTypes.number.isRequired,
